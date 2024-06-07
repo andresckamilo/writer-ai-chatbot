@@ -17,6 +17,8 @@ This application features a chatbot that utilizes an OpenAI LLM. The chatbot can
 ### Prerequisites
 
 - Python 3.10 or higher
+- OpenAI API key
+- Logfire API key (optional, for logging)
 
 ### Installation
 
@@ -34,13 +36,15 @@ This application features a chatbot that utilizes an OpenAI LLM. The chatbot can
 3. Set up your OpenAI API key:
    ```bash
    export OPENAI_API_KEY=your_openai_api_key
+   export LOGFIRE_API_KEY=your_logfire_api_key
+
    ```
 
 ### Running the Application
 
 1. Start the Writer.AI framework:
    ```bash
-   writer run chat-assistant
+   writer run
    ```
 
 2. Access the application through the local URL provided in the terminal.
@@ -52,10 +56,6 @@ To extend the application to use a different AI model, follow these steps:
 1. Update the integration code in `main.py` to connect to your preferred AI model's API.
 2. Modify the chatbot's logic to handle the responses from the new model.
 3. Test the chatbot to ensure it functions as expected with the new AI model.
-
-## Contributing
-
-We welcome contributions! Please fork this repository and submit pull requests to contribute to the project.
 
 ## License
 
