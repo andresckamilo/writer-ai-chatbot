@@ -40,18 +40,7 @@ def handle_simple_message(state, payload):
     for rsp in response:
         state["conversation"][-1]["content"] += rsp.choices[0].delta.content or ""
         state["conversation"] = state["conversation"]
-
-    state["conversation"] = state["conversation"]
     # Explicitly setting the state to ensure the changes are detected
-
-
-# def model_select(state, payload):
-#     print(payload)
-
-#     state["model"] = models[payload]
-#     state["model"] = state["model"]
-#     print(state["model"])
-#     # print("Conversation updated:", state["conversation"])
 
 def handle_button_click(state):
     models = {
