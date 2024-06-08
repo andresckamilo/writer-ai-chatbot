@@ -8,4 +8,3 @@ RUN poetry config virtualenvs.create false
 RUN poetry install --only main
 ENTRYPOINT [ "writer", "run" ]
 EXPOSE 8080
-CMD [ ".",  "--port", "8080", "--host", "0.0.0.0" ] 
