@@ -1,5 +1,7 @@
 
 import writer as wf
+import os
+import uvicorn
 
 def _run_model(model,content):
     import os
@@ -50,3 +52,8 @@ def handle_button_click(state):
     state["model"] = models[state["selected"]]
     print(state["model"])
 
+
+PORT = os.getenv('PORT', 8000)
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=int(PORT))
