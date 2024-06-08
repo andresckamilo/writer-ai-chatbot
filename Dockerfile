@@ -10,3 +10,4 @@ ARG LOGFIRE_API_KEY
 ARG OPENAI_API_KEY
 ENTRYPOINT [ "writer", "run" ]
 EXPOSE 8080
+CMD [ ".",  "--port", "8080", "--host", "0.0.0.0" ] 
