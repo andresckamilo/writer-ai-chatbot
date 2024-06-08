@@ -3,11 +3,10 @@ RUN apt-get update -y && mkdir /app
 RUN apt-get install build-essential cmake python3-dev -y
 COPY . /app
 WORKDIR /app
+ARG LOGFIRE_API_KEY 
+ARG OPENAI_API_KEY
 RUN pip3 install poetry
 RUN poetry config virtualenvs.create false
 RUN poetry install --only main
-ARG LOGFIRE_API_KEY 
-ARG OPENAI_API_KEY
 ENTRYPOINT [ "writer", "run" ]
 EXPOSE 8080
-CMD [ ".",  "--port", "8080", "--host", "0.0.0.0" ] 

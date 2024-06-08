@@ -51,3 +51,9 @@ def handle_button_click(state):
     }
     state["model"] = models[state["selected"]]
     print(state["model"])
+
+
+PORT = os.getenv('PORT', 8080)
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=int(PORT))
