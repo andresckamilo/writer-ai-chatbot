@@ -6,5 +6,7 @@ WORKDIR /app
 RUN pip3 install poetry
 RUN poetry config virtualenvs.create false
 RUN poetry install --only main
+ARG LOGFIRE_API_KEY 
+ARG OPENAI_API_KEY
 ENTRYPOINT [ "writer", "run" ]
 EXPOSE 8080
